@@ -10,9 +10,23 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+app.use(express.static('client'));
+
 app.get('/', (request, response) => {
-  response.send('Hello World!');
+  response.send('Got a GET request');
 });
+
+app.post('/', (request, response) => {
+  respose.send('Got a POST request');
+});
+
+app.put('/', (request, response) => {
+  response.send('Got a PUT request');
+})
+
+app.delete('/', (request, response) => {
+  response.send('Got a Delete request');
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}!`);
