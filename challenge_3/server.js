@@ -3,6 +3,9 @@ const app = express();
 const router = express.Router();
 const port = 3000;
 
+// CLIENT
+app.use(express.static('public'));
+
 // CONTROLLERS
 const fetchData = (request, response) => {
   console.log('Received a GET request');
